@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '13.5'
+
+project 'FooTest/FooTest.xcodeproj'
+
+target 'FooTest (iOS)' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+    pod 'moduleA', :path => '../shared/moduleA'
+    pod 'moduleB', :path => '../shared/moduleB'
+    pod 'moduleC', :path => '../shared/moduleC'
+
+end
+
+target 'FooTest (macOS)' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for FooTest (macOS)
+
+end

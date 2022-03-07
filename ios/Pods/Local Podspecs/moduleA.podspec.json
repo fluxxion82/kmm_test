@@ -1,0 +1,30 @@
+{
+  "name": "moduleA",
+  "version": "0.0.1",
+  "homepage": "https://github.com/JetBrains/kotlin-native",
+  "source": {
+    "git": "Not Published",
+    "tag": "Cocoapods/moduleA/0.0.1"
+  },
+  "authors": "",
+  "license": "",
+  "summary": "moduleA CocoaPods dependencies",
+  "vendored_frameworks": "build/cocoapods/framework/moduleA.framework",
+  "libraries": "c++",
+  "module_name": "moduleA_umbrella",
+  "platforms": {
+    "ios": "13.5"
+  },
+  "pod_target_xcconfig": {
+    "KOTLIN_PROJECT_PATH": ":moduleA",
+    "PRODUCT_MODULE_NAME": "moduleA"
+  },
+  "script_phases": [
+    {
+      "name": "Build moduleA",
+      "execution_position": "before_compile",
+      "shell_path": "/bin/sh",
+      "script": "                if [ \"YES\" = \"$COCOAPODS_SKIP_KOTLIN_BUILD\" ]; then\n                  echo \"Skipping Gradle build task invocation due to COCOAPODS_SKIP_KOTLIN_BUILD environment variable set to \"YES\"\"\n                  exit 0\n                fi\n                set -ev\n                REPO_ROOT=\"$PODS_TARGET_SRCROOT\"\n                \"$REPO_ROOT/../gradlew\" -p \"$REPO_ROOT\" $KOTLIN_PROJECT_PATH:syncFramework                     -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME                     -Pkotlin.native.cocoapods.archs=\"$ARCHS\"                     -Pkotlin.native.cocoapods.configuration=$CONFIGURATION\n"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+PODS:
+  - moduleA (0.0.1)
+  - moduleB (0.0.1):
+    - SwiftCoroutine (~> 2.1.11)
+  - moduleC (0.0.1)
+  - SwiftCoroutine (2.1.11)
+
+DEPENDENCIES:
+  - moduleA (from `../shared/moduleA`)
+  - moduleB (from `../shared/moduleB`)
+  - moduleC (from `../shared/moduleC`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftCoroutine
+
+EXTERNAL SOURCES:
+  moduleA:
+    :path: "../shared/moduleA"
+  moduleB:
+    :path: "../shared/moduleB"
+  moduleC:
+    :path: "../shared/moduleC"
+
+SPEC CHECKSUMS:
+  moduleA: ae57decb7cbaedac6ee39ce552653f154b85a3b6
+  moduleB: 494df888300b395f132163dd35ac7ed370a0dd7a
+  moduleC: 3e49cbddc115e57c5356b11bd0c6e538ca6d060c
+  SwiftCoroutine: b584780401083a0c41323ef1af07c2effe369dce
+
+PODFILE CHECKSUM: b9e452f5fbfdf19f70fc46baee14f8fb42b89ee2
+
+COCOAPODS: 1.11.2
